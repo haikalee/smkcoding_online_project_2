@@ -1,0 +1,24 @@
+package com.haikal.project2
+
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentActivity
+import androidx.viewpager2.adapter.FragmentStateAdapter
+import com.haikal.project2.fragment.PencegahanFragment
+import com.haikal.project2.fragment.PengertianFragment
+import com.haikal.project2.fragment.PengobatanFragment
+import com.haikal.project2.fragment.PenyebaranFragment
+
+class ViewPagerAdapter(fragmentActivity: FragmentActivity): FragmentStateAdapter(fragmentActivity) {
+    override fun getItemCount(): Int {
+        return 4
+    }
+    override fun createFragment(position: Int): Fragment {
+        when(position) {
+            0 -> { return PenyebaranFragment() }
+            1 -> { return PengertianFragment() }
+            2 -> { return PencegahanFragment() }
+            3 -> { return PengobatanFragment() }
+            else -> { return PengertianFragment() }
+        }
+    }
+}
