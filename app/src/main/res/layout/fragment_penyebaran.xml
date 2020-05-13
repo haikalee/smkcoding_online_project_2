@@ -5,8 +5,11 @@
     android:layout_height="match_parent"
     tools:context=".fragment.PenyebaranFragment">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_global"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:padding="20dp"
+        tools:listitem="@layout/global_item" />
 
 </FrameLayout>
