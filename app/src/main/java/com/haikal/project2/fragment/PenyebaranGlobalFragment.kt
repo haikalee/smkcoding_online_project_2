@@ -6,11 +6,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.haikal.project2.Api
-import com.haikal.project2.GlobalDataItem
-import com.haikal.project2.KawalCoronaGlobalAdapter
+import com.haikal.project2.data.Api
+import com.haikal.project2.data.global.GlobalDataItem
+import com.haikal.project2.rvadapter.KawalCoronaGlobalAdapter
 import com.haikal.project2.R
+import com.haikal.project2.util.dismissLoading
+import com.haikal.project2.util.showLoading
 import kotlinx.android.synthetic.main.fragment_penyebaran.*
+import kotlinx.android.synthetic.main.fragment_penyebaran_indonesia.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -18,31 +21,37 @@ import retrofit2.Response
 /**
  * A simple [Fragment] subclass.
  */
-class PenyebaranFragment : Fragment() {
+class PenyebaranGlobalFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_penyebaran, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        val call: Call<List<GlobalDataItem>> = Api.services.getData()
+        showLoading(context!!, sw_global)
+        fetchJson()
+    }
+    private fun fetchJson() {
+        val call: Call<List<GlobalDataItem>> = Api.services.getDataGlobal()
         call.enqueue(object: Callback<List<GlobalDataItem>>{
             override fun onFailure(call: Call<List<GlobalDataItem>>, t: Throwable) {
+//                dismissLoading(sw_global)
                 print(t.printStackTrace())
             }
-
             override fun onResponse(call: Call<List<GlobalDataItem>>, response: Response<List<GlobalDataItem>>) {
+                dismissLoading(sw_global)
                 showData(response.body()!!)
             }
         })
     }
     private fun showData(corona: List<GlobalDataItem>) {
         rv_global.apply {
-            layoutManager = LinearLayoutManager(activity)
-            adapter = KawalCoronaGlobalAdapter(corona)
+            layoutManager = LinearLayoutManager(context)
+            adapter = KawalCoronaGlobalAdapter(
+                context,
+                corona
+            )
         }
     }
 }

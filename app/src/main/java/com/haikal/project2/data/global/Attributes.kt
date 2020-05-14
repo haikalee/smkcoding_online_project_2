@@ -1,4 +1,4 @@
-package com.haikal.project2
+package com.haikal.project2.data.global
 
 
 import com.google.gson.annotations.SerializedName

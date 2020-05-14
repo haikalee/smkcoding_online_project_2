@@ -20,8 +20,4 @@ class PengertianFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_pengertian, container, false)
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-    }
-
 }

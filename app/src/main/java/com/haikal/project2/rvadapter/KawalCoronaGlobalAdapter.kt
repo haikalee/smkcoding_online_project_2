@@ -1,21 +1,26 @@
-package com.haikal.project2
+package com.haikal.project2.rvadapter
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.haikal.project2.R
+import com.haikal.project2.data.global.GlobalDataItem
 
-class KawalCoronaGlobalAdapter(val data: List<GlobalDataItem>): RecyclerView.Adapter<KawalCoronaGlobalAdapter.KawalCoronaHolder>() {
+class KawalCoronaGlobalAdapter(private val context: Context, val data: List<GlobalDataItem>): RecyclerView.Adapter<KawalCoronaGlobalAdapter.KawalCoronaHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): KawalCoronaHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.global_item, parent, false)
-        return KawalCoronaHolder(view)
+        val view = LayoutInflater.from(context).inflate(R.layout.global_item, parent, false)
+        return KawalCoronaHolder(
+            view
+        )
     }
 
     override fun onBindViewHolder(holder: KawalCoronaHolder, position: Int) {
         holder.country.text = data[position].attributes.countryRegion
         holder.confirmed.text = data[position].attributes.confirmed.toString()
-        holder.recovery.text = data[position].attributes.confirmed.toString()
+        holder.recovery.text = data[position].attributes.recovered.toString()
     }
 
     override fun getItemCount(): Int {

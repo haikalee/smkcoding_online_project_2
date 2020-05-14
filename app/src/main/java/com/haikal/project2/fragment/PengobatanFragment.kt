@@ -20,7 +20,4 @@ class PengobatanFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_pengobatan, container, false)
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-    }
 }
