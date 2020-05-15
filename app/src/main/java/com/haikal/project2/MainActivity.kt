@@ -7,7 +7,7 @@ import com.google.android.material.tabs.TabLayoutMediator
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
-    val menuIcon = arrayOf(R.drawable.ic_virus,R.drawable.ic_virus , R.drawable.ic_bacteria, R.drawable.ic_cleaning, R.drawable.ic_healthcare)
+    val menuIcon = arrayOf(R.drawable.ic_home, R.drawable.ic_bacteria, R.drawable.ic_cleaning, R.drawable.ic_healthcare)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)

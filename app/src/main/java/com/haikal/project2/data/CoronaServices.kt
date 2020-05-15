@@ -1,19 +1,18 @@
 package com.haikal.project2.data
 
-import com.haikal.project2.data.global.Attributes
-import com.haikal.project2.data.global.GlobalDataItem
-import com.haikal.project2.data.lokal.indonesia.IndonesiaDataItem
-import com.haikal.project2.data.lokal.provinsi.ProvinsiDataItem
+import com.haikal.project2.data.kawalcorona.ProvinsiItem
+import com.haikal.project2.data.mathdro.GlobalDataItem
+import com.haikal.project2.data.mathdro.GlobalDetail
 import retrofit2.Call
 import retrofit2.http.GET
 
 interface CoronaServices {
-    @GET("https://api.kawalcorona.com/")
-    fun getDataGlobal(): Call<List<GlobalDataItem>>
+    @GET("recovered")
+    fun getMathdroDataGlobal(): Call<List<GlobalDataItem>>
 
-    @GET("indonesia")
-    fun getDataIndonesia(): Call<List<IndonesiaDataItem>>
+    @GET("https://covid19.mathdro.id/api/")
+    fun getMathdroGlobal(): Call<GlobalDetail>
 
     @GET("indonesia/provinsi")
-    fun getDataProvinsi(): Call<List<ProvinsiDataItem>>
+    fun getKawalCoronaProvinsi(): Call<List<ProvinsiItem>>
 }

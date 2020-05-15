@@ -7,16 +7,15 @@ import com.haikal.project2.fragment.*
 
 class ViewPagerAdapter(fragmentActivity: FragmentActivity): FragmentStateAdapter(fragmentActivity) {
     override fun getItemCount(): Int {
-        return 5
+        return 4
     }
     override fun createFragment(position: Int): Fragment {
         when(position) {
-            0 -> { return PenyebaranGlobalFragment() }
+            0 -> { return Dashboard() }
             1 -> { return PengertianFragment() }
             2 -> { return PencegahanFragment() }
             3 -> { return PengobatanFragment() }
-            4 -> { return PenyebaranIndonesiaFragment() }
-            else -> { return PengertianFragment() }
+            else -> { return Dashboard() }
         }
     }
 }

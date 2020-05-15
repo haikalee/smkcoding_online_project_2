@@ -12,6 +12,6 @@
             android:id="@+id/rv_global"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:listitem="@layout/global_item" />
+            tools:listitem="@layout/data_item" />
     </FrameLayout>
 </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

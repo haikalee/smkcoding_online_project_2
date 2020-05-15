@@ -1,9 +1,9 @@
-package com.haikal.project2.data.lokal.indonesia
+package com.haikal.project2.data.kawalcorona
 
 
 import com.google.gson.annotations.SerializedName
 
-data class IndonesiaDataItem(
+data class ProvinsiItem(
     @SerializedName("meninggal")
     val meninggal: String,
     @SerializedName("name")

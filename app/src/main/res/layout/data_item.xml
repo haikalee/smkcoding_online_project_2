@@ -15,7 +15,7 @@
         android:orientation="vertical"
         android:padding="10dp">
         <TextView
-            android:id="@+id/tv_global_country"
+            android:id="@+id/tv_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Country"
@@ -29,10 +29,10 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Confirmed"
+                    android:text="Positif"
                     android:layout_marginRight="30dp"/>
                 <TextView
-                    android:id="@+id/tv_global_confirmed"
+                    android:id="@+id/tv_confirmed"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Confirmed" />
@@ -41,13 +41,25 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Recovered"
+                    android:text="Sembuh"
                     android:layout_marginRight="30dp"/>
                 <TextView
-                    android:id="@+id/tv_global_recovered"
+                    android:id="@+id/tv_recovered"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="recovered" />
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Meninggal"
+                    android:layout_marginRight="30dp"/>
+                <TextView
+                    android:id="@+id/tv_death"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Death" />
             </TableRow>
         </TableLayout>
     </LinearLayout>
