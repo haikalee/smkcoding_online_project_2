@@ -5,6 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragment.PengertianFragment">
+
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -19,31 +21,26 @@
             app:layout_constraintTop_toTopOf="parent">
         </View>
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
             android:text="PENGERTIAN"
-            android:textColor="@android:color/white"
-            android:textSize="20sp"
-            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@id/view2"
             app:layout_constraintTop_toTopOf="@id/view2"
             tools:ignore="MissingConstraints"
-            android:fontFamily="sans-serif" />
+            android:fontFamily="sans-serif"
+            style="@style/TextTitle" />
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="100dp"
-            android:layout_marginEnd="20dp"
             android:text="@string/pengertian"
-            android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/view2"
-            tools:ignore="MissingConstraints" />
+            tools:ignore="MissingConstraints"
+            style="@style/TextDescription" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_medical"
+        tools:ignore="MissingConstraints"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp"/>
 </FrameLayout>
