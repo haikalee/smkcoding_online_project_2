@@ -20,6 +20,7 @@ class Provinsi : AppCompatActivity() {
         setContentView(R.layout.activity_provinsi)
         showLoading(this, sw_provinsi)
         fetchJson()
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
     private fun fetchJson() {

@@ -25,9 +25,7 @@
             app:layout_constraintStart_toStartOf="@id/view2"
             app:layout_constraintTop_toTopOf="@id/view2"
             tools:ignore="MissingConstraints"
-            android:fontFamily="sans-serif"
             style="@style/TextTitle" />
-
         <TextView
             android:text="@string/pengertian"
             app:layout_constraintEnd_toEndOf="parent"

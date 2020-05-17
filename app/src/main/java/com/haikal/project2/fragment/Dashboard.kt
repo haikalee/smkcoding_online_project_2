@@ -13,7 +13,6 @@ import com.haikal.project2.Provinsi
 
 import com.haikal.project2.R
 import com.haikal.project2.data.Api
-import com.haikal.project2.data.kawalcorona.indonesia.Indonesia
 import com.haikal.project2.data.kawalcorona.indonesia.IndonesiaItem
 import com.haikal.project2.data.mathdro.GlobalDetail
 import com.haikal.project2.util.dismissLoading
@@ -60,6 +59,7 @@ class Dashboard : Fragment() {
         call.enqueue(object: Callback<GlobalDetail>{
             override fun onFailure(call: Call<GlobalDetail>, t: Throwable) {
                 dismissLoading(sw)
+                t.printStackTrace()
             }
             override fun onResponse(call: Call<GlobalDetail>, response: Response<GlobalDetail>) {
                 dismissLoading(sw)
@@ -74,6 +74,7 @@ class Dashboard : Fragment() {
         call.enqueue(object: Callback<List<IndonesiaItem>>{
             override fun onFailure(call: Call<List<IndonesiaItem>>, t: Throwable) {
                 dismissLoading(sw)
+                t.printStackTrace()
             }
 
             override fun onResponse(call: Call<List<IndonesiaItem>>, response: Response<List<IndonesiaItem>>) {

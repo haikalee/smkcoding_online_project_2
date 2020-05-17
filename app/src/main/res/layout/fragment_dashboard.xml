@@ -3,185 +3,200 @@
     android:id="@+id/sw"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <FrameLayout
+
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
-        <RelativeLayout
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center">
-
-            <View
-            android:id="@+id/viewBar"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:background="@color/colorPrimary"
-            android:layout_alignParentTop="true"/>
-        <TextView
-            android:text="Corona Virus"
-            style="@style/TextTitle" />
-        <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginTop="50dp"
-            android:src="@drawable/ic_virus"
-            android:layout_centerHorizontal="true"/>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/card_global"
+            android:layout_height="match_parent">
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="16dp"
-                app:cardCornerRadius="10dp"
-                android:layout_below="@id/viewBar">
-                <LinearLayout
+                android:layout_gravity="center">
+                <View
+                    android:id="@+id/viewBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:background="@color/colorPrimary"
+                    android:layout_alignParentTop="true"/>
+                <TextView
+                    android:text="Corona Virus"
+                    style="@style/TextTitle" />
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="50dp"
+                    android:src="@drawable/ic_virus"
+                    android:layout_centerHorizontal="true"/>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_global"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="20dp">
-                    <TextView
-                        android:text="DATA GLOBAL"
-                        style="@style/ContainerTitle" />
+                    android:layout_gravity="center"
+                    android:layout_margin="16dp"
+                    app:cardCornerRadius="10dp"
+                    android:layout_below="@id/viewBar">
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:orientation="vertical"
+                        android:padding="20dp">
+                        <TextView
+                            android:text="DATA GLOBAL"
+                            style="@style/ContainerTitle" />
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
-                            <TextView
-                                android:text="Positif"
-                                style="@style/Title" />
-                            <TextView
-                                android:id="@+id/tv_positif"
-                                android:layout_width="wrap_content"
+                            android:orientation="horizontal">
+                            <LinearLayout
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Jumlah" />
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+                                <TextView
+                                    android:text="Positif"
+                                    style="@style/Title"
+                                    android:padding="10dp"/>
+                                <TextView
+                                    android:id="@+id/tv_positif"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Jumlah"
+                                    android:padding="10dp"
+                                    android:gravity="center"/>
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+                                <TextView
+                                    android:text="Sembuh"
+                                    style="@style/Title"
+                                    android:padding="10dp" />
+                                <TextView
+                                    android:id="@+id/tv_sembuh"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Jumlah"
+                                    android:padding="10dp" />
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+                                <TextView
+                                    android:text="Meniggal"
+                                    style="@style/Title"
+                                    android:padding="10dp" />
+                                <TextView
+                                    android:id="@+id/tv_meninggal"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Jumlah"
+                                    android:padding="10dp" />
+                            </LinearLayout>
                         </LinearLayout>
-                        <LinearLayout
+                        <Button
+                            android:id="@+id/btn_global_data"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
-                            <TextView
-                                android:text="Sembuh"
-                                style="@style/Title" />
-                            <TextView
-                                android:id="@+id/tv_sembuh"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Jumlah" />
-                        </LinearLayout>
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
-                            <TextView
-                                android:text="Meniggal"
-                                style="@style/Title" />
-                            <TextView
-                                android:id="@+id/tv_meninggal"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Jumlah" />
-                        </LinearLayout>
+                            android:text="GLOBAL DATA"
+                            android:background="@drawable/button_background"
+                            android:textColor="@android:color/white" />
                     </LinearLayout>
-                    <Button
-                        android:id="@+id/btn_global_data"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="GLOBAL DATA"
-                        android:background="@drawable/button_background"
-                        android:textColor="@android:color/white" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-            <androidx.cardview.widget.CardView
-                android:id="@+id/card_indonesia"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:cardCornerRadius="10dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginStart="16dp"
-                android:layout_below="@id/card_global">
-                <LinearLayout
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_indonesia"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="20dp">
-                    <TextView
-                        android:text="DATA INDONESIA"
-                        style="@style/ContainerTitle" />
+                    app:cardCornerRadius="10dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_below="@id/card_global">
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:orientation="vertical"
+                        android:padding="20dp">
+                        <TextView
+                            android:text="DATA INDONESIA"
+                            style="@style/ContainerTitle" />
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
-                            <TextView
-                                android:text="Positif"
-                                style="@style/Title" />
-                            <TextView
-                                android:id="@+id/tv_indonesia_positif"
-                                android:layout_width="wrap_content"
+                            android:orientation="horizontal">
+                            <LinearLayout
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Jumlah" />
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+                                <TextView
+                                    android:text="Positif"
+                                    style="@style/Title"
+                                    android:padding="10dp" />
+                                <TextView
+                                    android:id="@+id/tv_indonesia_positif"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Jumlah"
+                                    android:padding="10dp" />
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+                                <TextView
+                                    android:text="Sembuh"
+                                    style="@style/Title"
+                                    android:padding="10dp" />
+                                <TextView
+                                    android:id="@+id/tv_indonesia_sembuh"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Jumlah"
+                                    android:padding="10dp" />
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+                                <TextView
+                                    android:text="Meniggal"
+                                    style="@style/Title"
+                                    android:padding="10dp"/>
+                                <TextView
+                                    android:id="@+id/tv_indonesia_meninggal"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Jumlah"
+                                    android:padding="10dp" />
+                            </LinearLayout>
                         </LinearLayout>
-                        <LinearLayout
+                        <Button
+                            android:id="@+id/btn_provinsi_indonesia"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
-                            <TextView
-                                android:text="Sembuh"
-                                style="@style/Title" />
-                            <TextView
-                                android:id="@+id/tv_indonesia_sembuh"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Jumlah" />
-                        </LinearLayout>
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
-                            <TextView
-                                android:text="Meniggal"
-                                style="@style/Title"/>
-                            <TextView
-                                android:id="@+id/tv_indonesia_meninggal"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Jumlah" />
-                        </LinearLayout>
+                            android:text="PROVINSI INDONESIA"
+                            android:background="@drawable/button_background"
+                            android:textColor="@android:color/white"/>
                     </LinearLayout>
-                    <Button
-                        android:id="@+id/btn_provinsi_indonesia"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="PROVINSI INDONESIA"
-                        android:background="@drawable/button_background"
-                        android:textColor="@android:color/white"/>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-            <Button
-                android:id="@+id/btn_covid_wa"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/card_indonesia"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
-                android:text="INFO LEBIH LANJUT"
-                android:textColor="@android:color/white"
-                android:background="@drawable/button_background" />
-        </RelativeLayout>
-    </FrameLayout>
+                </androidx.cardview.widget.CardView>
+                <Button
+                    android:id="@+id/btn_covid_wa"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/card_indonesia"
+                    android:layout_margin="20dp"
+                    android:text="INFO LEBIH LANJUT"
+                    android:textColor="@android:color/white"
+                    android:background="@drawable/button_background" />
+            </RelativeLayout>
+        </FrameLayout>
+    </ScrollView>
 </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
