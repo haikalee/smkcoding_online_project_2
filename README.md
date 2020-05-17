@@ -1,7 +1,9 @@
 # smkcoding_online_project_2
 
 # Lawan Corona #
-Aplikasi ini merupakan sebuah aplikasi yang dapa dimanfaatkan untuk menlacak persebaran covid-19 di global maupun di lokal. 
+Aplikasi ini merupakan sebuah aplikasi yang dapat dimanfaatkan untuk menlacak persebaran covid-19 di global maupun di lokal. 
+
+Link : [Lawan Corona](https://drive.google.com/file/d/10J_WV1DmYRn8MXMwm5LJv63ooSi0tK1t/view?usp=drivesdk)
 
 ![Dashboard](https://user-images.githubusercontent.com/64683161/82135647-36e3b900-982f-11ea-94d1-2822bc38bcb0.jpg)
 ![Pengertian](https://user-images.githubusercontent.com/64683161/82138612-e62e8900-984b-11ea-8264-2e7fc234c07d.jpg)
@@ -24,7 +26,7 @@ Aplikasi ini merupakan sebuah aplikasi yang dapa dimanfaatkan untuk menlacak per
 ## Assets ##
 * [flaticon](https://flaticon.com)
   
- ## Thanks TO ##
+ ## Thanks To ##
  * Allah SWT
  * Orang Tua
  * SMKCODING
