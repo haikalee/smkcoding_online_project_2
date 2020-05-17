@@ -26,13 +26,19 @@
             app:layout_constraintTop_toTopOf="@id/view2"
             tools:ignore="MissingConstraints"
             style="@style/TextTitle" />
-        <TextView
-            android:text="@string/pengertian"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view2"
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             tools:ignore="MissingConstraints"
-            style="@style/TextDescription" />
+            app:layout_constraintTop_toBottomOf="@+id/view2"
+            android:layout_margin="15dp"
+            app:cardCornerRadius="10dp">
+
+            <TextView
+                android:text="@string/pengertian"
+                tools:ignore="MissingConstraints"
+                style="@style/TextDescription" />
+        </androidx.cardview.widget.CardView>
     </androidx.constraintlayout.widget.ConstraintLayout>
     <ImageView
         android:layout_width="100dp"
@@ -40,5 +46,5 @@
         android:src="@drawable/ic_medical"
         tools:ignore="MissingConstraints"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="50dp"/>
+        android:layout_marginTop="65dp"/>
 </FrameLayout>
