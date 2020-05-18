@@ -1,7 +1,7 @@
 # smkcoding_online_project_2
 
 # Lawan Corona #
-Aplikasi ini merupakan sebuah aplikasi yang dapat dimanfaatkan untuk menlacak persebaran covid-19 di global maupun di lokal. 
+Aplikasi ini merupakan sebuah aplikasi yang dapat dimanfaatkan untuk melacak persebaran covid-19 diglobal maupun dilokal. 
 
 Link : [Lawan Corona](https://drive.google.com/file/d/10J_WV1DmYRn8MXMwm5LJv63ooSi0tK1t/view?usp=drivesdk)
 
