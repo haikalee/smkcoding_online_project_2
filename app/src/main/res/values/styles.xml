@@ -48,11 +48,16 @@
     </style>
 
     <style name="SplashScreen" parent="Theme.AppCompat.Light.NoActionBar">
-<!--        <item name="colorPrimary">#80FF72</item>-->
         <item name="colorPrimaryDark">#80FF72</item>
     </style>
 
     <style name="LoginScreen" parent="Theme.MaterialComponents.Light.NoActionBar">
 
+    </style>
+
+    <style name="NoteTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
     </style>
 </resources>

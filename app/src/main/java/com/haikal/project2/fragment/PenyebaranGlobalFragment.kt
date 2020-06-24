@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.haikal.project2.data.Api
+import com.haikal.project2.data.api.Api
 import com.haikal.project2.rvadapter.CoronaGlobalAdapter
 import com.haikal.project2.R
 import com.haikal.project2.data.mathdro.global.GlobalDataItem

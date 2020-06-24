@@ -12,7 +12,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".NoteActivity" />
+        <activity android:name=".NoteActivity"
+            android:theme="@style/NoteTheme"
+            android:parentActivityName=".MainActivity" />
+
         <activity
             android:name=".LoginActivity"
             android:theme="@style/LoginScreen" />
@@ -30,7 +33,7 @@
             android:parentActivityName=".MainActivity"
             android:theme="@style/ListData" />
         <activity
-            android:name=".Global"
+            android:name=".GlobalActivity"
             android:parentActivityName=".MainActivity"
             android:theme="@style/ListData" />
         <activity android:name=".MainActivity" />

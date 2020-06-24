@@ -1,4 +1,4 @@
-package com.haikal.project2.data
+package com.haikal.project2.data.api
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

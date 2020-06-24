@@ -1,6 +1,6 @@
 package com.haikal.project2.fragment//package com.haikal.project2.fragment
 //
-//import com.haikal.project2.data.Api
+//import com.haikal.project2.data.api.Api
 //import org.junit.Test
 //
 //import retrofit2.Call

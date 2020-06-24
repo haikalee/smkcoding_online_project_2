@@ -8,13 +8,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
-import com.haikal.project2.Global
+import com.haikal.project2.GlobalActivity
 import com.haikal.project2.ProvinsiActivity
 
 import com.haikal.project2.R
-import com.haikal.project2.data.Api
+import com.haikal.project2.data.api.Api
 import com.haikal.project2.data.mathdro.global.GlobalDetail
 import com.haikal.project2.data.mathdro.indonesia.Indonesia
 import com.haikal.project2.util.dismissLoading
@@ -27,18 +28,22 @@ import java.lang.Exception
 
 class Dashboard : Fragment() {
 
+    private lateinit var sw: SwipeRefreshLayout
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_dashboard, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        sw = view.findViewById(R.id.sw)
+
         showLoading(context!!, sw)
         fetchJsonGlobal()
         fetchJsonIndonesia()
 
         btn_global_data.setOnClickListener {
-            val move = Intent(context, Global::class.java)
+            val move = Intent(context, GlobalActivity::class.java)
             startActivity(move)
         }
 

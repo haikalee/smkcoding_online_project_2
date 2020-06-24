@@ -3,7 +3,7 @@ package com.haikal.project2
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.haikal.project2.data.Api
+import com.haikal.project2.data.api.Api
 import com.haikal.project2.data.kawalcorona.provinsi.ProvinsiItem
 import com.haikal.project2.rvadapter.CoronaProvinsiIndonesiaAdapter
 import com.haikal.project2.util.dismissLoading

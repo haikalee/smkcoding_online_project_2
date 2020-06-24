@@ -23,10 +23,8 @@ class NotepadFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        btn_catatan.setOnClickListener {
+        fb_add_note.setOnClickListener {
             startActivity(Intent(context, NoteActivity::class.java))
         }
-
     }
-
 }

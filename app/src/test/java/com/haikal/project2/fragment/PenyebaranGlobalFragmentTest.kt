@@ -1,6 +1,6 @@
 package com.haikal.project2.fragment
 
-import com.haikal.project2.data.Api
+import com.haikal.project2.data.api.Api
 import com.haikal.project2.data.mathdro.global.GlobalDataItem
 import org.junit.Test
 

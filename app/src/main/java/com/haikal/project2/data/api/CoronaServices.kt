@@ -1,4 +1,4 @@
-package com.haikal.project2.data
+package com.haikal.project2.data.api
 
 import com.haikal.project2.data.kawalcorona.provinsi.ProvinsiItem
 import com.haikal.project2.data.mathdro.indonesia.Indonesia

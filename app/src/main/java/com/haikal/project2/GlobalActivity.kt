@@ -3,7 +3,7 @@ package com.haikal.project2
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.haikal.project2.data.Api
+import com.haikal.project2.data.api.Api
 import com.haikal.project2.data.mathdro.global.GlobalDataItem
 import com.haikal.project2.rvadapter.CoronaGlobalAdapter
 import com.haikal.project2.util.dismissLoading
@@ -13,13 +13,14 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class Global : AppCompatActivity() {
+class GlobalActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_global)
         showLoading(this, sw_global)
         fetchJson()
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
     private fun fetchJson() {
