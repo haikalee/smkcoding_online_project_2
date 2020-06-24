@@ -1,6 +1,6 @@
 package com.haikal.project2.data
 
-import com.haikal.project2.data.kawalcorona.ProvinsiItem
+import com.haikal.project2.data.kawalcorona.provinsi.ProvinsiItem
 import com.haikal.project2.data.mathdro.indonesia.Indonesia
 import com.haikal.project2.data.mathdro.global.GlobalDataItem
 import com.haikal.project2.data.mathdro.global.GlobalDetail

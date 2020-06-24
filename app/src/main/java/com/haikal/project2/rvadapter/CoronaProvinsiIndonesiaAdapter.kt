@@ -7,8 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.haikal.project2.R
-import com.haikal.project2.data.kawalcorona.Attributes
-import com.haikal.project2.data.kawalcorona.ProvinsiItem
+import com.haikal.project2.data.kawalcorona.provinsi.ProvinsiItem
 
 class CoronaProvinsiIndonesiaAdapter(val context: Context,val data: List<ProvinsiItem>): RecyclerView.Adapter<CoronaProvinsiIndonesiaAdapter.CoronaProvinsiIndonesiaHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CoronaProvinsiIndonesiaHolder {
