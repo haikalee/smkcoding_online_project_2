@@ -51,4 +51,8 @@
 <!--        <item name="colorPrimary">#80FF72</item>-->
         <item name="colorPrimaryDark">#80FF72</item>
     </style>
+
+    <style name="LoginScreen" parent="Theme.MaterialComponents.Light.NoActionBar">
+
+    </style>
 </resources>

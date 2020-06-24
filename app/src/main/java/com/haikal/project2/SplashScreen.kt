@@ -13,7 +13,7 @@ class SplashScreen : AppCompatActivity() {
             override fun run() {
                 try {
                     sleep(3000)
-                    val move = Intent(baseContext, MainActivity::class.java)
+                    val move = Intent(baseContext, LoginActivity::class.java)
                     startActivity(move)
                     finish()
                 } catch (e: Exception) {

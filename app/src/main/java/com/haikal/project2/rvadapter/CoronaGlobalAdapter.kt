@@ -7,14 +7,12 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.haikal.project2.R
-import com.haikal.project2.data.mathdro.GlobalDataItem
+import com.haikal.project2.data.mathdro.global.GlobalDataItem
 
 class CoronaGlobalAdapter(private val context: Context, val data: List<GlobalDataItem>): RecyclerView.Adapter<CoronaGlobalAdapter.KawalCoronaHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): KawalCoronaHolder {
         val view = LayoutInflater.from(context).inflate(R.layout.data_item, parent, false)
-        return KawalCoronaHolder(
-            view
-        )
+        return KawalCoronaHolder(view)
     }
 
     override fun onBindViewHolder(holder: KawalCoronaHolder, position: Int) {

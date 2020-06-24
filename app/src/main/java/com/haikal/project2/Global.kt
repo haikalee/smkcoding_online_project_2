@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.haikal.project2.data.Api
-import com.haikal.project2.data.mathdro.GlobalDataItem
+import com.haikal.project2.data.mathdro.global.GlobalDataItem
 import com.haikal.project2.rvadapter.CoronaGlobalAdapter
 import com.haikal.project2.util.dismissLoading
 import com.haikal.project2.util.showLoading
@@ -35,13 +35,11 @@ class Global : AppCompatActivity() {
             }
         })
     }
+
     private fun showData(corona: List<GlobalDataItem>) {
         rv_global.apply {
             layoutManager = LinearLayoutManager(context)
-            adapter = CoronaGlobalAdapter(
-                context,
-                corona
-            )
+            adapter = CoronaGlobalAdapter(context, corona)
         }
     }
 }

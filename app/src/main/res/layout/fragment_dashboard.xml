@@ -206,15 +206,31 @@
                             android:textColor="@android:color/white"/>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
+
                 <Button
                     android:id="@+id/btn_covid_wa"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/card_indonesia"
-                    android:layout_margin="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp"
                     android:text="INFO LEBIH LANJUT"
                     android:textColor="@android:color/white"
                     android:background="@drawable/button_background" />
+
+                <Button
+                    android:id="@+id/btn_logout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_below="@id/btn_covid_wa"
+                    android:text="logout"
+                    android:background="@drawable/button_background"
+                    android:textColor="@android:color/white" />
             </RelativeLayout>
         </FrameLayout>
     </ScrollView>

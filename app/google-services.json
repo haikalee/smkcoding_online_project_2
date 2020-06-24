@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "360813134674",
+    "firebase_url": "https://lawan-corona-220fe.firebaseio.com",
+    "project_id": "lawan-corona-220fe",
+    "storage_bucket": "lawan-corona-220fe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:360813134674:android:778b9870318f679784b08b",
+        "android_client_info": {
+          "package_name": "com.haikal.project2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "360813134674-bqckmipiskgb4su8c16r02h01sacst7s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUxZyxKjpMFqsdeDP1ptdLECnMwAspq64"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "360813134674-bqckmipiskgb4su8c16r02h01sacst7s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

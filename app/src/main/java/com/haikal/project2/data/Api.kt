@@ -9,15 +9,15 @@ class Api {
         val kawalCorona = "https://api.kawalcorona.com/"
         val servicesMathdro: CoronaServices
             get() {
-                val r = Retrofit.Builder().baseUrl(mathdro).addConverterFactory(GsonConverterFactory.create()).build()
-                val t =  r.create(CoronaServices::class.java)
-                return t
+                val r1 = Retrofit.Builder().baseUrl(mathdro).addConverterFactory(GsonConverterFactory.create()).build()
+                val t1 =  r1.create(CoronaServices::class.java)
+                return t1
             }
         val servicesKawalCorona: CoronaServices
             get() {
-                val r = Retrofit.Builder().baseUrl(kawalCorona).addConverterFactory(GsonConverterFactory.create()).build()
-                val t =  r.create(CoronaServices::class.java)
-                return t
+                val r2 = Retrofit.Builder().baseUrl(kawalCorona).addConverterFactory(GsonConverterFactory.create()).build()
+                val t2 =  r2.create(CoronaServices::class.java)
+                return t2
             }
     }
 }
