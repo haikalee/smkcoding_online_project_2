@@ -15,8 +15,10 @@ import com.google.firebase.database.FirebaseDatabase
 import com.haikal.project2.R
 import com.haikal.project2.activity.UpdateActivity
 import com.haikal.project2.data.note.NoteData
+import com.haikal.project2.viewmodel.NoteViewModel
 
 class NotepadAdapter internal constructor(private val context: Context, private val note: ArrayList<NoteData>) : RecyclerView.Adapter<NotepadAdapter.NotepadViewHolder>(){
+    private lateinit var viewModel: NoteViewModel
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NotepadViewHolder {
         return NotepadViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_note, parent, false))
     }
@@ -48,6 +50,9 @@ class NotepadAdapter internal constructor(private val context: Context, private 
                                 .child(note[position].key)
                                 .removeValue()
                                 .addOnSuccessListener {
+                                    viewModel = NoteViewModel()
+                                    viewModel.init(context)
+                                    viewModel.deleteNote(note[position])
                                     Toast.makeText(context, "Berhasil Dihapus...", Toast.LENGTH_SHORT).show()
                                 }
                         }

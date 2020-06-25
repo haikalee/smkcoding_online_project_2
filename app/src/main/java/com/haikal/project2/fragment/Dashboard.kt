@@ -15,11 +15,13 @@ import com.haikal.project2.activity.GlobalActivity
 import com.haikal.project2.activity.ProvinsiActivity
 
 import com.haikal.project2.R
+import com.haikal.project2.activity.LoginActivity
 import com.haikal.project2.data.api.Api
 import com.haikal.project2.data.mathdro.global.GlobalDetail
 import com.haikal.project2.data.kawalcorona.indonesia.IndonesiaItem
 import com.haikal.project2.util.dismissLoading
 import com.haikal.project2.util.showLoading
+import kotlinx.android.synthetic.*
 import kotlinx.android.synthetic.main.fragment_dashboard.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -67,7 +69,8 @@ class Dashboard : Fragment() {
 
         btn_logout.setOnClickListener{
             Firebase.auth.signOut()
-            childFragmentManager.beginTransaction().remove(this).commit()
+//            childFragmentManager.beginTransaction().remove(this).commit()
+            startActivity(Intent(view.context, LoginActivity::class.java))
         }
     }
 

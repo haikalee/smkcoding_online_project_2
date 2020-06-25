@@ -33,12 +33,12 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
         btn_login_google.setOnClickListener(this)
         btn_login_facebook.setOnClickListener(this)
 
-        if (auth!!.currentUser == null) {
-            Toast.makeText(this, "belum Login...", Toast.LENGTH_SHORT).show()
-        } else {
+        if (auth!!.currentUser != null) {
             val move = Intent(this, MainActivity::class.java)
             startActivity(move)
             finish()
+        } else {
+            Toast.makeText(this, "Belum Login", Toast.LENGTH_SHORT).show()
         }
     }
 

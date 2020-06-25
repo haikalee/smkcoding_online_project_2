@@ -51,7 +51,7 @@
         <item name="colorPrimaryDark">#80FF72</item>
     </style>
 
-    <style name="LoginScreen" parent="Theme.MaterialComponents.Light.DarkActionBar">
+    <style name="LoginScreen" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>

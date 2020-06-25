@@ -8,12 +8,14 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.haikal.project2.R
 import com.haikal.project2.data.note.NoteData
+import com.haikal.project2.viewmodel.NoteViewModel
 import kotlinx.android.synthetic.main.activity_update.*
 
 class UpdateActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
     private lateinit var ref: DatabaseReference
+    private lateinit var viewModel: NoteViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,6 +24,9 @@ class UpdateActivity : AppCompatActivity() {
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         auth = FirebaseAuth.getInstance()
         ref = FirebaseDatabase.getInstance().reference
+
+        viewModel = NoteViewModel()
+        viewModel.init(this)
 
         getData()
 
@@ -47,6 +52,7 @@ class UpdateActivity : AppCompatActivity() {
                     .setValue(newNote)
                     .addOnSuccessListener {
                         Toast.makeText(this, "Berhasil Update...", Toast.LENGTH_SHORT).show()
+                        viewModel.updateNote(newNote)
                         finish()
                     }
                     .addOnFailureListener {
