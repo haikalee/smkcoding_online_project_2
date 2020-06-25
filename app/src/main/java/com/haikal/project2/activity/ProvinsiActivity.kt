@@ -1,8 +1,9 @@
-package com.haikal.project2
+package com.haikal.project2.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.haikal.project2.R
 import com.haikal.project2.data.api.Api
 import com.haikal.project2.data.kawalcorona.provinsi.ProvinsiItem
 import com.haikal.project2.rvadapter.CoronaProvinsiIndonesiaAdapter

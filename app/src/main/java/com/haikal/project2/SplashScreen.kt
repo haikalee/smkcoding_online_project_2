@@ -3,6 +3,7 @@ package com.haikal.project2
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.haikal.project2.activity.LoginActivity
 
 class SplashScreen : AppCompatActivity() {
 

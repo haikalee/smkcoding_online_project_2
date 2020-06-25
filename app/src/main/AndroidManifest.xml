@@ -12,12 +12,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".NoteActivity"
+        <activity android:name=".activity.UpdateActivity"
             android:theme="@style/NoteTheme"
-            android:parentActivityName=".MainActivity" />
-
+            android:parentActivityName=".activity.MainActivity"/>
         <activity
-            android:name=".LoginActivity"
+            android:name=".activity.NoteActivity"
+            android:parentActivityName=".activity.MainActivity"
+            android:theme="@style/NoteTheme" />
+        <activity
+            android:name=".activity.LoginActivity"
             android:theme="@style/LoginScreen" />
         <activity
             android:name=".SplashScreen"
@@ -29,14 +32,14 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ProvinsiActivity"
-            android:parentActivityName=".MainActivity"
+            android:name=".activity.ProvinsiActivity"
+            android:parentActivityName=".activity.MainActivity"
             android:theme="@style/ListData" />
         <activity
-            android:name=".GlobalActivity"
-            android:parentActivityName=".MainActivity"
+            android:name=".activity.GlobalActivity"
+            android:parentActivityName=".activity.MainActivity"
             android:theme="@style/ListData" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".activity.MainActivity" />
 
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"

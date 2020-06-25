@@ -11,13 +11,13 @@ import android.view.ViewGroup
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
-import com.haikal.project2.GlobalActivity
-import com.haikal.project2.ProvinsiActivity
+import com.haikal.project2.activity.GlobalActivity
+import com.haikal.project2.activity.ProvinsiActivity
 
 import com.haikal.project2.R
 import com.haikal.project2.data.api.Api
 import com.haikal.project2.data.mathdro.global.GlobalDetail
-import com.haikal.project2.data.mathdro.indonesia.Indonesia
+import com.haikal.project2.data.kawalcorona.indonesia.IndonesiaItem
 import com.haikal.project2.util.dismissLoading
 import com.haikal.project2.util.showLoading
 import kotlinx.android.synthetic.main.fragment_dashboard.*
@@ -38,7 +38,7 @@ class Dashboard : Fragment() {
 
         sw = view.findViewById(R.id.sw)
 
-        showLoading(context!!, sw)
+        showLoading(view.context, sw)
         fetchJsonGlobal()
         fetchJsonIndonesia()
 
@@ -55,7 +55,7 @@ class Dashboard : Fragment() {
         btn_covid_wa.setOnClickListener {
             val noWa = "+6281133399000"
             try {
-                val pm: PackageManager = context!!.packageManager
+                val pm: PackageManager = view.context.packageManager
                 pm.getPackageInfo("com.whatsapp", PackageManager.GET_ACTIVITIES)
                 val wa = Intent(Intent.ACTION_VIEW)
                 wa.data = Uri.parse("https://api.whatsapp.com/send?phone=$noWa")
@@ -67,7 +67,7 @@ class Dashboard : Fragment() {
 
         btn_logout.setOnClickListener{
             Firebase.auth.signOut()
-            this.fragmentManager!!.beginTransaction().remove(this).commit()
+            childFragmentManager.beginTransaction().remove(this).commit()
         }
     }
 
@@ -88,18 +88,18 @@ class Dashboard : Fragment() {
     }
 
     private fun fetchJsonIndonesia() {
-        val call: Call<Indonesia> = Api.servicesMathdro.getMathdroIndonesia()
-        call.enqueue(object: Callback<Indonesia> {
-            override fun onFailure(call: Call<Indonesia>, t: Throwable) {
+        val call: Call<List<IndonesiaItem>> = Api.servicesKawalCorona.getKawalCoronaIndonesia()
+        call.enqueue(object: Callback<List<IndonesiaItem>> {
+            override fun onFailure(call: Call<List<IndonesiaItem>>, t: Throwable) {
                 dismissLoading(sw)
                 t.printStackTrace()
             }
 
-            override fun onResponse(call: Call<Indonesia>, response: Response<Indonesia>) {
+            override fun onResponse(call: Call<List<IndonesiaItem>>, response: Response<List<IndonesiaItem>>) {
                 dismissLoading(sw)
-                tv_indonesia_positif.text = response.body()!!.confirmed.value.toString()
-                tv_indonesia_sembuh.text = response.body()!!.recovered.value.toString()
-                tv_indonesia_meninggal.text = response.body()!!.deaths.value.toString()
+                tv_indonesia_positif.text = response.body()!![0].positif
+                tv_indonesia_sembuh.text = response.body()!![0].sembuh
+                tv_indonesia_meninggal.text = response.body()!![0].meninggal
             }
         })
     }

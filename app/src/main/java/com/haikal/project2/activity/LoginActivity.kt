@@ -1,4 +1,4 @@
-package com.haikal.project2
+package com.haikal.project2.activity
 
 import android.app.Activity
 import android.content.Intent
@@ -12,7 +12,7 @@ import kotlinx.android.synthetic.main.activity_login.*
 import com.facebook.appevents.AppEventsLogger
 import com.facebook.login.LoginResult
 import com.firebase.ui.auth.AuthUI
-import com.google.firebase.auth.FacebookAuthProvider
+import com.haikal.project2.R
 
 
 class LoginActivity : AppCompatActivity(), View.OnClickListener {
