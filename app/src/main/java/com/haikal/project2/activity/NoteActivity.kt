@@ -26,8 +26,7 @@ class NoteActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
         ref = FirebaseDatabase.getInstance().reference
 
-        viewModel = NoteViewModel()
-        viewModel.init(this)
+        viewModel = NoteViewModel(this)
         btn_add_note.setOnClickListener {
             saveData()
         }

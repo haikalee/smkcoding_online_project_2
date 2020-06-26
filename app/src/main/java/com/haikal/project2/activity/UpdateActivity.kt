@@ -25,8 +25,7 @@ class UpdateActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
         ref = FirebaseDatabase.getInstance().reference
 
-        viewModel = NoteViewModel()
-        viewModel.init(this)
+        viewModel = NoteViewModel(this)
 
         getData()
 

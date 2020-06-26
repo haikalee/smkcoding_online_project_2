@@ -50,8 +50,7 @@ class NotepadAdapter internal constructor(private val context: Context, private 
                                 .child(note[position].key)
                                 .removeValue()
                                 .addOnSuccessListener {
-                                    viewModel = NoteViewModel()
-                                    viewModel.init(context)
+                                    viewModel = NoteViewModel(context)
                                     viewModel.deleteNote(note[position])
                                     Toast.makeText(context, "Berhasil Dihapus...", Toast.LENGTH_SHORT).show()
                                 }

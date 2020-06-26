@@ -11,12 +11,12 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 
-class NoteViewModel() : ViewModel() {
+class NoteViewModel(context: Context) : ViewModel() {
 
     private lateinit var repo: NoteRepo
     private lateinit var readAllData: LiveData<List<NoteData>>
 
-    fun init(context: Context) {
+    init {
         val noteDao = NoteDatabase.getDatabase(context).noteDao()
         repo = NoteRepo(noteDao)
         readAllData = repo.readAllData

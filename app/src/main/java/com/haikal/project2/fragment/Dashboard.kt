@@ -1,15 +1,24 @@
 package com.haikal.project2.fragment
 
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.app.NotificationCompat
+import androidx.core.app.NotificationManagerCompat
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.iid.FirebaseInstanceId
 import com.google.firebase.ktx.Firebase
 import com.haikal.project2.activity.GlobalActivity
 import com.haikal.project2.activity.ProvinsiActivity
@@ -52,6 +61,7 @@ class Dashboard : Fragment() {
         btn_provinsi_indonesia.setOnClickListener {
             val move = Intent(context, ProvinsiActivity::class.java)
             startActivity(move)
+            getToken()
         }
 
         btn_covid_wa.setOnClickListener {
@@ -69,9 +79,20 @@ class Dashboard : Fragment() {
 
         btn_logout.setOnClickListener{
             Firebase.auth.signOut()
-//            childFragmentManager.beginTransaction().remove(this).commit()
             startActivity(Intent(view.context, LoginActivity::class.java))
         }
+    }
+
+    private fun getToken() {
+        FirebaseInstanceId.getInstance().instanceId
+            .addOnCompleteListener(OnCompleteListener { task ->
+                if (!task.isSuccessful) {
+                    Log.d("Token", "Gagal")
+                }
+
+                val token = task.result?.token
+                Log.d("Token", token)
+            })
     }
 
     private fun fetchJsonGlobal() {
