@@ -49,6 +49,7 @@ class MyFirebaseMessagingService: FirebaseMessagingService() {
 
             notificationChannel.setSound(soundUri, attributes)
             notificationChannel.enableVibration(true)
+            notificationChannel.enableLights(true)
             notificationManager.createNotificationChannel(notificationChannel)
         }
 

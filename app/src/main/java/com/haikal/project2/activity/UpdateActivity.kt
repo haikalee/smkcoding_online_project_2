@@ -10,6 +10,7 @@ import com.haikal.project2.R
 import com.haikal.project2.data.note.NoteData
 import com.haikal.project2.viewmodel.NoteViewModel
 import kotlinx.android.synthetic.main.activity_update.*
+import kotlinx.android.synthetic.main.fragment_pengobatan.*
 
 class UpdateActivity : AppCompatActivity() {
 
@@ -25,7 +26,8 @@ class UpdateActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
         ref = FirebaseDatabase.getInstance().reference
 
-        viewModel = NoteViewModel(this)
+        viewModel = NoteViewModel()
+        viewModel.init(this)
 
         getData()
 

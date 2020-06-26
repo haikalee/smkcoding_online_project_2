@@ -17,9 +17,9 @@ import com.haikal.project2.R
 
 class LoginActivity : AppCompatActivity(), View.OnClickListener {
 
-    var auth: FirebaseAuth? = null
+    private var auth: FirebaseAuth? = null
     private val RC_SIGN_IN = 9001
-    private var callbackManager: CallbackManager? = null
+    private lateinit var callbackManager: CallbackManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -59,14 +59,15 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
                 finish()
             } else Toast.makeText(this, "Login Gagal...", Toast.LENGTH_SHORT).show()
         }
-        callbackManager!!.onActivityResult(requestCode, resultCode, data)
+        callbackManager.onActivityResult(requestCode, resultCode, data)
     }
 
     private fun googleLogin() {
         startActivityForResult(
             AuthUI.getInstance()
                 .createSignInIntentBuilder()
-                .setAvailableProviders(listOf(AuthUI.IdpConfig.GoogleBuilder().build()))
+                .setAvailableProviders(listOf(
+                    AuthUI.IdpConfig.GoogleBuilder().build()))
                 .setIsSmartLockEnabled(true)
                 .build(),
             RC_SIGN_IN

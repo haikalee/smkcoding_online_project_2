@@ -41,7 +41,8 @@ class NotepadFragment : Fragment() {
             startActivity(Intent(context, NoteActivity::class.java))
         }
 
-        viewModel = NoteViewModel(view.context)
+        viewModel = NoteViewModel()
+        viewModel.init(view.context)
 
         getData()
 
