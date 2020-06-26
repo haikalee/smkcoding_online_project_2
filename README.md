@@ -3,7 +3,8 @@
 # Lawan Corona #
 Aplikasi ini merupakan sebuah aplikasi yang dapat dimanfaatkan untuk melacak persebaran covid-19 diglobal maupun dilokal. 
 
-Link : [Lawan Corona](https://drive.google.com/file/d/10J_WV1DmYRn8MXMwm5LJv63ooSi0tK1t/view?usp=drivesdk)
+Link : [Lawan Corona v1](https://drive.google.com/file/d/10J_WV1DmYRn8MXMwm5LJv63ooSi0tK1t/view?usp=drivesdk)
+       [Lawan Corona v2](https://drive.google.com/file/d/10KALbhrLqdF0Uj9Tp6om3w9m8mZZpFK9/view?usp=sharing)
 
 ![Dashboard](https://user-images.githubusercontent.com/64683161/82135647-36e3b900-982f-11ea-94d1-2822bc38bcb0.jpg)
 ![Pengertian](https://user-images.githubusercontent.com/64683161/82138612-e62e8900-984b-11ea-8264-2e7fc234c07d.jpg)
@@ -17,6 +18,7 @@ Link : [Lawan Corona](https://drive.google.com/file/d/10J_WV1DmYRn8MXMwm5LJv63oo
 * Pengertian
 * Pencegahan
 * Pengobatan
+* Catatan
 
 ## Api ##
 * [Kawal Corona](https://kawalcorona.com/api)
