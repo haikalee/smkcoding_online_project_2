@@ -33,10 +33,13 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
         btn_login_google.setOnClickListener(this)
         btn_login_facebook.setOnClickListener(this)
 
+    }
+
+    override fun onStart() {
+        super.onStart()
         if (auth!!.currentUser != null) {
             val move = Intent(this, MainActivity::class.java)
             startActivity(move)
-            finish()
         } else {
             Toast.makeText(this, "Belum Login", Toast.LENGTH_SHORT).show()
         }
@@ -56,7 +59,6 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
                 Toast.makeText(this, "Login Berhasil...", Toast.LENGTH_SHORT).show()
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
-                finish()
             } else Toast.makeText(this, "Login Gagal...", Toast.LENGTH_SHORT).show()
         }
         callbackManager.onActivityResult(requestCode, resultCode, data)
@@ -81,15 +83,12 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
             override fun onSuccess(result: LoginResult?) {
                 val move = Intent(this@LoginActivity, MainActivity::class.java)
                 startActivity(move)
-                finish()
             }
 
             override fun onCancel() {
-                Toast.makeText(this@LoginActivity, "Batal Login...", Toast.LENGTH_SHORT).show()
             }
 
             override fun onError(error: FacebookException?) {
-                Toast.makeText(this@LoginActivity, "Gagal Login...", Toast.LENGTH_SHORT).show()
             }
         })
     }

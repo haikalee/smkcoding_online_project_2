@@ -1,21 +1,16 @@
 package com.haikal.project2.fragment
 
-import android.app.NotificationChannel
-import android.app.NotificationManager
-import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
-import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.app.NotificationCompat
-import androidx.core.app.NotificationManagerCompat
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+import com.facebook.login.LoginManager
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.iid.FirebaseInstanceId
@@ -79,7 +74,9 @@ class Dashboard : Fragment() {
 
         btn_logout.setOnClickListener{
             Firebase.auth.signOut()
+            LoginManager.getInstance().logOut()
             startActivity(Intent(view.context, LoginActivity::class.java))
+            childFragmentManager.beginTransaction().remove(this).commit()
         }
     }
 
