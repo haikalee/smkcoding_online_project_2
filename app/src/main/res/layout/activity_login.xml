@@ -29,22 +29,15 @@
                 android:layout_centerHorizontal="true"
                 android:text="LOGIN"
                 android:textSize="35sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimary"/>
 
             <com.google.android.gms.common.SignInButton
                 android:id="@+id/btn_login_google"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_login"
                 android:layout_marginBottom="20dp"
-                android:text="Google" />
-
-            <com.facebook.login.widget.LoginButton
-                android:id="@+id/btn_login_facebook"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/btn_login_google"
-                android:layout_marginBottom="20dp" />
+                android:layout_alignParentBottom="true"/>
 
         </RelativeLayout>
     </androidx.cardview.widget.CardView>

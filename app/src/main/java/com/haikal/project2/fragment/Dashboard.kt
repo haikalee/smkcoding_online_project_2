@@ -10,7 +10,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-import com.facebook.login.LoginManager
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.iid.FirebaseInstanceId
@@ -74,9 +73,8 @@ class Dashboard : Fragment() {
 
         btn_logout.setOnClickListener{
             Firebase.auth.signOut()
-            LoginManager.getInstance().logOut()
+            onDestroy()
             startActivity(Intent(view.context, LoginActivity::class.java))
-            childFragmentManager.beginTransaction().remove(this).commit()
         }
     }
 
@@ -86,7 +84,6 @@ class Dashboard : Fragment() {
                 if (!task.isSuccessful) {
                     Log.d("Token", "Gagal")
                 }
-
                 val token = task.result?.token
                 Log.d("Token", token)
             })

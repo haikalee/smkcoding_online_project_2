@@ -6,11 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
-import com.facebook.*
 import com.google.firebase.auth.*
 import kotlinx.android.synthetic.main.activity_login.*
-import com.facebook.appevents.AppEventsLogger
-import com.facebook.login.LoginResult
 import com.firebase.ui.auth.AuthUI
 import com.haikal.project2.R
 
@@ -19,19 +16,14 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
 
     private var auth: FirebaseAuth? = null
     private val RC_SIGN_IN = 9001
-    private lateinit var callbackManager: CallbackManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        FacebookSdk.sdkInitialize(applicationContext)
-        AppEventsLogger.activateApp(this)
-
         auth = FirebaseAuth.getInstance()
 
         btn_login_google.setOnClickListener(this)
-        btn_login_facebook.setOnClickListener(this)
 
     }
 
@@ -48,7 +40,6 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(v: View) {
         when (v.id) {
             R.id.btn_login_google -> googleLogin()
-            R.id.btn_login_facebook -> facebookLogin()
         }
     }
 
@@ -61,7 +52,6 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
                 startActivity(intent)
             } else Toast.makeText(this, "Login Gagal...", Toast.LENGTH_SHORT).show()
         }
-        callbackManager.onActivityResult(requestCode, resultCode, data)
     }
 
     private fun googleLogin() {
@@ -74,22 +64,5 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
                 .build(),
             RC_SIGN_IN
         )
-    }
-
-    private fun facebookLogin() {
-        callbackManager = CallbackManager.Factory.create()
-        btn_login_facebook.setReadPermissions("email", "public_profile")
-        btn_login_facebook.registerCallback(callbackManager, object: FacebookCallback<LoginResult> {
-            override fun onSuccess(result: LoginResult?) {
-                val move = Intent(this@LoginActivity, MainActivity::class.java)
-                startActivity(move)
-            }
-
-            override fun onCancel() {
-            }
-
-            override fun onError(error: FacebookException?) {
-            }
-        })
     }
 }
