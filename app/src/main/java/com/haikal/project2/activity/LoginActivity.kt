@@ -67,6 +67,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener  {
     }
 
     private fun loginFacebook() {
+        btn_login_facebook.setReadPermissions("email", "public_profile")
         btn_login_facebook.registerCallback(callbackManager, object : FacebookCallback<LoginResult> {
             override fun onSuccess(loginResult: LoginResult) {
                 handleFacebookAccessToken(loginResult.accessToken)
