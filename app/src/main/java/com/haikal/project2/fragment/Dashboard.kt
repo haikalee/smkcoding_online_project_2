@@ -10,7 +10,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+import com.facebook.login.LoginManager
 import com.google.android.gms.tasks.OnCompleteListener
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.iid.FirebaseInstanceId
 import com.google.firebase.ktx.Firebase
@@ -19,6 +21,7 @@ import com.haikal.project2.activity.ProvinsiActivity
 
 import com.haikal.project2.R
 import com.haikal.project2.activity.LoginActivity
+import com.haikal.project2.activity.MainActivity
 import com.haikal.project2.data.api.Api
 import com.haikal.project2.data.mathdro.global.GlobalDetail
 import com.haikal.project2.data.kawalcorona.indonesia.IndonesiaItem
@@ -34,6 +37,7 @@ import java.lang.Exception
 class Dashboard : Fragment() {
 
     private lateinit var sw: SwipeRefreshLayout
+    private lateinit var auth: FirebaseAuth
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_dashboard, container, false)
     }
@@ -42,6 +46,7 @@ class Dashboard : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         sw = view.findViewById(R.id.sw)
+        auth = Firebase.auth
 
         showLoading(view.context, sw)
         fetchJsonGlobal()
@@ -72,8 +77,9 @@ class Dashboard : Fragment() {
         }
 
         btn_logout.setOnClickListener{
-            Firebase.auth.signOut()
-            onDestroy()
+            auth.signOut()
+            LoginManager.getInstance().logOut()
+            childFragmentManager.beginTransaction().remove(this).commit()
             startActivity(Intent(view.context, LoginActivity::class.java))
         }
     }

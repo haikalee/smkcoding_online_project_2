@@ -6,6 +6,7 @@ import androidx.core.content.res.ResourcesCompat
 import com.google.android.material.tabs.TabLayoutMediator
 import com.haikal.project2.R
 import com.haikal.project2.ViewPagerAdapter
+import com.haikal.project2.fragment.Dashboard
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -16,6 +17,7 @@ class MainActivity : AppCompatActivity() {
         R.drawable.ic_healthcare,
         R.drawable.ic_notepad
     )
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)

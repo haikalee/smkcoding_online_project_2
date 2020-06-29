@@ -33,10 +33,17 @@
                 android:textColor="@color/colorPrimary"/>
 
             <com.google.android.gms.common.SignInButton
-                android:id="@+id/btn_login_google"
+                android:id="@+id/btn_   login_google"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"
+                android:layout_alignParentBottom="true"/>
+
+            <com.facebook.login.widget.LoginButton
+                android:id="@+id/btn_login_facebook"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btn_login_google"
                 android:layout_alignParentBottom="true"/>
 
         </RelativeLayout>

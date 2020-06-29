@@ -4,6 +4,7 @@
     <string name="pencegahan">"1) Sering-seringlah mencuci tangan dengan sabun dan air selama 20 detik hingga bersih.\n\n2) Hindari menyentuh wajah, hidung, atau mulut saat tangan dalam keadaan kotor atau belum dicuci.\n\n3) Hindari kontak langsung atau berdekatan dengan orang yang sakit.\n\n4) Hindari menyentuh hewan atau unggas liar.\n\n5) Membersihkan dan mensterilkan permukaan benda yang sering digunakan.\n\n6)Tutup hidung dan mulut ketika bersin atau batuk dengan tisu. Kemudian, buanglah tisu dan cuci tangan hingga bersih.\n\n7) Jangan keluar rumah dalam keadaan sakit.\n\n8) Kenakan masker dan segera berobat ke fasilitas kesehatan ketika mengalami gejala penyakit saluran napas. "</string>
     <string name="pengobatan">Minum obat yang dijual bebas untuk mengurangi rasa sakit, demam, dan batuk. Namun, jangan berikan aspirin pada anak-anak. Selain itu, jangan berikan obat batuk pada anak di bawah empat tahun. Gunakan pelembap ruangan atau mandi air panas untuk membantu meredakan sakit tenggorokan dan batuk. Perbanyak istirahat.Perbanyak asupan cairan tubuh. Jika merasa khawatir dengan gejala yang dialami, segeralah hubungi penyedia layanan kesehatan terdekat.</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="facebook_app_id">628674507749734</string>
+    <string name="fb_login_protocol_scheme">fb628674507749734</string>
+
 </resources>
