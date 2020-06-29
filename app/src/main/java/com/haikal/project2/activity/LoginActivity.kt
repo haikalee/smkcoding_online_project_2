@@ -3,6 +3,7 @@ package com.haikal.project2.activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import com.facebook.*
@@ -40,6 +41,8 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener  {
         googleSignInClient = GoogleSignIn.getClient(this, gso)
 
         btn_login_google.setOnClickListener(this)
+        btn_login_facebook.setOnClickListener(this)
+        loginFacebook()
 
     }
 
@@ -55,8 +58,6 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener  {
         if (auth.currentUser != null) {
             val currentUser = auth.currentUser
             updateUI(currentUser)
-        } else {
-            Toast.makeText(baseContext, "Belum Login", Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -66,17 +67,17 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener  {
     }
 
     private fun loginFacebook() {
-        btn_login_facebook.setReadPermissions("email", "public_profile")
         btn_login_facebook.registerCallback(callbackManager, object : FacebookCallback<LoginResult> {
             override fun onSuccess(loginResult: LoginResult) {
                 handleFacebookAccessToken(loginResult.accessToken)
             }
 
             override fun onCancel() {
+                Log.d("FacebookLogin", "cancel")
             }
 
             override fun onError(error: FacebookException) {
-
+                Log.d("FacebookLogin", error.message)
             }
         })
     }
@@ -88,6 +89,8 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener  {
                 if (task.isSuccessful) {
                     val user = auth.currentUser
                     updateUI(user)
+                    Log.d("FacebookLogin", "task.isSuccessful")
+                    Toast.makeText(baseContext, task.result!!.user!!.displayName, Toast.LENGTH_SHORT).show()
                 } else {
                     Toast.makeText(baseContext, "Gagal Auth", Toast.LENGTH_SHORT).show()
                     updateUI(null)
@@ -97,6 +100,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener  {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
+        callbackManager.onActivityResult(requestCode, resultCode, data)
         if (requestCode == RC_SIGN_IN) {
             val task = GoogleSignIn.getSignedInAccountFromIntent(data)
             try {
@@ -106,7 +110,6 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener  {
                 e.printStackTrace()
             }
         }
-        callbackManager.onActivityResult(requestCode, resultCode, data)
     }
 
     private fun firebaseAuthGoogle(idToken: String) {
@@ -116,6 +119,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener  {
                 if (task.isSuccessful) {
                     val user = auth.currentUser
                     updateUI(user)
+                    Log.d("GoogleLogin", "task.isSuccessful")
                 } else {
                     Toast.makeText(baseContext, "Gagal Auth", Toast.LENGTH_SHORT).show()
                     updateUI(null)
@@ -126,6 +130,8 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener  {
     private fun updateUI(user: FirebaseUser?) {
         if (user != null) {
             startActivity(Intent(this, MainActivity::class.java))
+        } else {
+            Toast.makeText(this, "Belum Login", Toast.LENGTH_SHORT).show()
         }
     }
 }

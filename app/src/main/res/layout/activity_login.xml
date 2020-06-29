@@ -32,19 +32,31 @@
                 android:textStyle="bold"
                 android:textColor="@color/colorPrimary"/>
 
-            <com.google.android.gms.common.SignInButton
-                android:id="@+id/btn_login_google"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
-                android:layout_alignParentBottom="true"/>
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:src="@drawable/ic_virus"
+                android:layout_below="@id/tv_login"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"/>
 
-            <com.facebook.login.widget.LoginButton
-                android:id="@+id/btn_login_facebook"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/btn_login_google"
-                android:layout_alignParentBottom="true"/>
+                android:orientation="vertical"
+                android:layout_alignParentBottom="true">
+
+                <com.google.android.gms.common.SignInButton
+                    android:id="@+id/btn_login_google"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"/>
+
+                <com.facebook.login.widget.LoginButton
+                    android:id="@+id/btn_login_facebook"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
 
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
