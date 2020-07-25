@@ -27,7 +27,14 @@ Link : [Lawan Corona v1](https://drive.google.com/file/d/10J_WV1DmYRn8MXMwm5LJv6
   
 ## Assets ##
 * [flaticon](https://flaticon.com)
-  
+
+## Teknologi ##
+* Firebase Notification
+* Firebase Database
+* Firebase Auth
+* Room Database
+* Retrofit
+
  ## Thanks To ##
  * Allah SWT
  * Orang Tua
